@@ -19,7 +19,7 @@ const searchSongs = () => {
                     <h3 class="lyrics-name">${x.title}</h3>
                     <p class="author lead">Album by <span>${x.artist.name}</span></p>
                     <audio controls>
-								<source src="${x.preview}" type="audio/ogg" />
+								<source src="${x.preview}" type="audio/mpeg" />
 							</audio>
                 </div>
                 <div class="col-md-3 text-md-right text-center">
@@ -39,6 +39,6 @@ const getLyrics = (name, title) => {
     fetch(`https://api.lyrics.ovh/v1/${name}/${title}`)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            console.log(data.lyrics);
         });
 };
